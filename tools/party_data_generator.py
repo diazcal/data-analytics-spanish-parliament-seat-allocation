@@ -51,5 +51,39 @@ class PartyHard:
         # Reset row index
         self.df_party = self.df_party.reset_index(drop=True)
 
+        # Normalize names
+        self.df_party.rename(columns={"PODEMOS-IU": "PODEMOS",
+                                      "ERC-SOBIRANISTES": "ERC",
+                                      "Cs": "CIUDADANOS",
+                                      "JxCAT-JUNTS": "JUNTS",
+                                      "ECP-GUANYEM EL CANVI": "ENCOMUPODEM",
+                                      "EAJ-PNV": "PNV",
+                                      "EH Bildu": "BILDU",
+                                      "MÁS PAÍS-EQUO": "MASPAISEQUO",
+                                      "CUP-PR": "CUP",
+                                      "PODEMOS-EU": "PODEMOSEU",
+                                      "CCa-PNC-NC": "CCaPNCNC",
+                                      "NA+": "NASUMA",
+                                      "MÉS COMPROMÍS": "MESCOMPROMIS",
+                                      "¡TERUEL EXISTE!": "TERUELEXISTE",
+                                      "MÁS PAÍS": "MASPAIS",
+                                      "RECORTES CERO-GV": "RECORTES0",
+                                      "PUM+J": "PUMJ",
+                                      "M PAÍS-CHA-EQUO": "MASPAISCHA",
+                                      "MÉS-ESQUERRA": "MES",
+                                      "AxSÍ": "ANDALUCIAPORSI",
+                                      "AVANT ADELANTE LOS VERDES": "AVANTADELANTE",
+                                      "I.Fem": "IFEM",
+                                      "UIG-SOM-CUIDES": "UIGSOMCUIDES",
+                                      "SOMOS REGIÓN": "SOMOSREGION",
+                                      "AHORA CANARIAS": "AHORACANARIAS",
+                                      "EXTREMADURA UNIDA": "EXTREMADURAUNIDA",
+                                      "P-LIB": "PLIB",
+                                      "UNIDOS SÍ-ACPS-Def": "UNIDOSSI",
+                                      "FE de las JONS": "FALANGE",
+                                      "UNIÓN REGIONALISTA": "UREGIONALISTA",
+                                      "C 21": "C21",
+                                      }, inplace=True)
+
     def getCleanedData(self):
         return self.df_party
